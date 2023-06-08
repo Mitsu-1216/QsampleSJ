@@ -13,6 +13,7 @@ JavaBeans site =(JavaBeans) application.getAttribute("site");
 <body>
 <h1>ようこそ!できた！</h1>
 <input type="text"placeholder="やること" >
+<button type="submit">click!</button>
 <p>
 <a href="/sampleSJ/ProgramServlet?action=like">タスク</a>:
 <%= site.getLike() %>人
