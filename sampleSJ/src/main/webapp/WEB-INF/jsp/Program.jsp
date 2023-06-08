@@ -11,7 +11,7 @@ JavaBeans site =(JavaBeans) application.getAttribute("site");
 <title>Todoアプリ</title>
 </head>
 <body>
-<h1>ようこそ!</h1>
+<h1>ようこそ!できた！</h1>
 <p>
 <a href="/sampleSJ/ProgramServlet?action=like">Good!</a>:
 <%= site.getLike() %>人
