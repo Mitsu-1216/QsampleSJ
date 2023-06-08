@@ -13,7 +13,7 @@ JavaBeans site =(JavaBeans) application.getAttribute("site");
 <body>
 <h1>ようこそ!できた！</h1>
 <p>
-<a href="/sampleSJ/ProgramServlet?action=like">Good!</a>:
+<a href="/sampleSJ/ProgramServlet?action=like">タスク</a>:
 <%= site.getLike() %>人
 <a href="/sampleSJ/ProgramServlet?action=dislike">Bad!</a>:
 <%= site.getDislike() %>人
