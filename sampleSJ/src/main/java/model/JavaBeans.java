@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class JavaBeans implements Serializable {
 	private int like;
 	private int dislike;
+	private String bookname;
 
 	public JavaBeans() {
 		like = 0;
@@ -24,6 +25,14 @@ public class JavaBeans implements Serializable {
 	}
 
 	public void setDislike(int dislike) {
+		this.dislike = dislike;
+	}
+	
+	public int getBookname() {
+		return dislike;
+	}
+
+	public void setBookname(int dislike) {
 		this.dislike = dislike;
 	}
 
