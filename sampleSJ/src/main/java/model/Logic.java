@@ -11,4 +11,7 @@ public class Logic {
 		site.setDislike(count + 1);
 	}
 
+	
+	
+	
 }
