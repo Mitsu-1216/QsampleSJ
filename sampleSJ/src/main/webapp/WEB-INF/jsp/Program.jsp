@@ -12,19 +12,16 @@ JavaBeans site =(JavaBeans) application.getAttribute("site");
 </head>
 <body>
 <h1>ようこそ!できた！</h1>
-<input type="text"placeholder="やること" >
-<button type="submit">click!</button>
+<form action="/sampleSJ/RegisterTask" method="post">
+<input type="text"placeholder="task" >
+<input type="date" name="date">
+<input type="submit">click!</button>
+</form>
 <p>
 <a href="/sampleSJ/ProgramServlet?action=like">タスク</a>:
 <%= site.getLike() %>人
 <a href="/sampleSJ/ProgramServlet?action=dislike">Bad!</a>:
 <%= site.getDislike() %>人
 </p>
-
-<form action="/sampleSJ/RegisterTask" method="post">
-<input type="text" name="task">
-<input type="date" name="date">
-</form>
-
 </body>
 </html>
