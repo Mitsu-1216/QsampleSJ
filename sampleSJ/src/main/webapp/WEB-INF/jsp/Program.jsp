@@ -21,5 +21,10 @@ JavaBeans site =(JavaBeans) application.getAttribute("site");
 <%= site.getDislike() %>人
 </p>
 
+<form action="/sampleSJ/RegisterTask" method="post">
+<input type="text" name="task">
+<input type="date" name="date">
+</form>
+
 </body>
 </html>
