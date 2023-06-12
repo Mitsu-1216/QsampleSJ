@@ -6,10 +6,7 @@ public class Logic {
 		site.setLike(count + 1);
 	}
 
-	public void dislike(JavaBeans site) {
-		int count = site.getDislike();
-		site.setDislike(count + 1);
-	}
+
 
 	
 	

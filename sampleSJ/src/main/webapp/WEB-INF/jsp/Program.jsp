@@ -8,20 +8,22 @@ JavaBeans site =(JavaBeans) application.getAttribute("site");
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Todoアプリ</title>
+<title>今日のタスク</title>
 </head>
 <body>
-<h1>ようこそ!できた！</h1>
+<h1>今日のタスク一覧</h1>
 <form action="/sampleSJ/RegisterTask" method="post">
-<input type="text"placeholder="task" >
+<input type="text"placeholder="やること" >
 <input type="date" name="date">
-<input type="submit">click!</button>
+<input type="submit" value="登録">
 </form>
 <p>
-<a href="/sampleSJ/ProgramServlet?action=like">タスク</a>:
 <%= site.getLike() %>人
-<a href="/sampleSJ/ProgramServlet?action=dislike">Bad!</a>:
-<%= site.getDislike() %>人
+<%= site.getLike() %>人
+<a href="/sampleSJ/ProgramServlet?action=like">削除</a>:
+<%= site.getLike() %>人
+<a href="/sampleSJ/ProgramServlet?action=dislike">完了</a>:
+<%= site.setBookname() %>人	
 </p>
 </body>
 </html>
