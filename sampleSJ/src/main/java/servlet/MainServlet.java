@@ -53,14 +53,14 @@ public class MainServlet extends HttpServlet {
 		if(text != null && text.length() != 0) {
 
 			ServletContext application = this.getServletContext();
-			List<TodoBeans> mutterList = (List<TodoBeans>) application.getAttribute("todoList");
+			List<TodoBeans> todoList = (List<TodoBeans>) application.getAttribute("todoList");
 
 			HttpSession session = request.getSession();
 			UserBeans loginUser = (UserBeans) session.getAttribute("user");
 
 			TodoBeans todo = new TodoBeans(loginUser.getName(), text);
 			RegisterLogic registerTodo = new RegisterLogic();
-			registerTodo.execute(todo, todo);
+			registerTodo.execute(todo, todoList);
 
 			application.setAttribute("todoList", todoList);
 		} else {
