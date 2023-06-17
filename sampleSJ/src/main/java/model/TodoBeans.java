@@ -9,7 +9,7 @@ public class TodoBeans implements Serializable {
 	public TodoBeans() {
 	}
 
-	public Mutter(String userName, String text) {
+	public TodoBeans(String userName, String text) {
 		this.userName = userName;
 		this.text = text;
 	}
