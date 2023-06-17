@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="model.UserBeans" %>
 <%
-UserBeans login = (UserBeans) session.getAttribute("login");
+UserBeans user = (UserBeans) session.getAttribute("user");
 %>
 <!DOCTYPE html>
 <html>
@@ -12,9 +12,9 @@ UserBeans login = (UserBeans) session.getAttribute("login");
 </head>
 <body>
 <h1>Login</h1>
-<% if(login != null) { %>
+<% if(user != null) { %>
 <p>ログインに成功しました！</p>
-<p>ようこそ<%= login.getName() %>さん</p>
+<p>ようこそ<%= user.getName() %>さん</p>
 <a href="/sampleSJ/MainServlet">Todo一覧へ</a>
 <% } else { %>
 <p>ログインに失敗しました</p>
