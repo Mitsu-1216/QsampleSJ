@@ -9,6 +9,6 @@
 <body>
 <h1>ログアウト</h1>
 <p>ログアウトしました</p>
-<a href="/Java_JSP/">トップへ</a>
+<a href="/sampleSJ/">トップへ</a>
 </body>
 </html>
