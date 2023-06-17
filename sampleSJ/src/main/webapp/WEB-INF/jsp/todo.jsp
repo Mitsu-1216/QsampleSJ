@@ -14,15 +14,14 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 <title>Todoアプリ</title>
 </head>
 <body>
-<h1>メイン画面</h1>
+<h1>タスク一覧</h1>
 <p>
-<%= login.getName() %>   がログイン中
+<%= login.getName() %>さんのタスク
 <a href="/sampleSJ/Logout">ログアウト</a>
 </p>
-<p><a href="/sampleSJ/Main">更新</a></p>
 <form action="/sampleSJ/MainServlet" method="post">
-<input type="text" name="text">
-<input type="submit" value="つぶやく">
+<input type="text" name="text" placeholder="タスクを入力してください">
+<input type="submit" value="登録">
 </form>
 <% if(errorMsg != null) { %>
 <p><%= errorMsg %></p>

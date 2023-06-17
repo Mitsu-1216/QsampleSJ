@@ -14,11 +14,11 @@ UserBeans user = (UserBeans) session.getAttribute("user");
 <h1>Login</h1>
 <% if(user != null) { %>
 <p>ログインに成功しました！</p>
-<p>ようこそ<%= user.getName() %>さん</p>
-<a href="/sampleSJ/MainServlet">Todo一覧へ</a>
+<p>ようこそ<%= user.getName() %>さん、こんにちは！</p>
+<a href="/sampleSJ/MainServlet">タスク一覧へ</a>
 <% } else { %>
 <p>ログインに失敗しました</p>
-<a href="/sampleSJ/">TOPへ</a>
+<a href="/sampleSJ/">トップへ</a>
 <% } %>
 </body>
 </html>

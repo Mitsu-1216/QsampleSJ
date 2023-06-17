@@ -64,7 +64,7 @@ public class MainServlet extends HttpServlet {
 
 			application.setAttribute("todoList", todoList);
 		} else {
-			request.setAttribute("errorMsg","つぶやきが入力されていません");
+			request.setAttribute("errorMsg","タスクが入力されていません");
 		}
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/todo.jsp");

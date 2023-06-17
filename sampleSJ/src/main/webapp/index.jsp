@@ -11,7 +11,7 @@
 <form action="/sampleSJ/LoginServlet" method="post">
 ユーザ名：<input type="text" name="name">
 パスワード：<input type="password" name="password"><br>
-<input type="submit" value="ログイン">
+<input type="submit" value="Login">
 </form>
 </body>
 </html>
