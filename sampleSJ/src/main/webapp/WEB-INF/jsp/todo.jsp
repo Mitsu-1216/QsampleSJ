@@ -3,7 +3,7 @@
 <%@ page import="model.UserBeans,model.TodoBeans,java.util.List" %>
 <%@ page import ="model.UserBeans" %>
 <%
-UserBeans login = (UserBeans) session.getAttribute("login");
+UserBeans user = (UserBeans) session.getAttribute("user");
 List<TodoBeans> todoList = (List<TodoBeans>) application.getAttribute("todoList");
 String errorMsg = (String) request.getAttribute("errorMsg");
 %>
@@ -16,7 +16,7 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 <body>
 <h1>タスク一覧</h1>
 <p>
-<%= login.getName() %>さんのタスク
+<%= user.getName() %>さんのタスク
 <a href="/sampleSJ/Logout">ログアウト</a>
 </p>
 <form action="/sampleSJ/MainServlet" method="post">
@@ -25,6 +25,9 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 </form>
 <% if(errorMsg != null) { %>
 <p><%= errorMsg %></p>
+<% } %>
+<% if(todoList == null) { %>
+<p>まだタスクが登録されていません</p>
 <% } %>
 <% for(TodoBeans todo : todoList) {%>
 <p><%= todo.getUserName() %> : 
