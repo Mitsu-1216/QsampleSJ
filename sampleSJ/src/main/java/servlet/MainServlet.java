@@ -13,31 +13,32 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.TodoBeans;
 import model.RegisterLogic;
+import model.TodoBeans;
+import model.UserBeans;
 
 
 @WebServlet("/MainServlet")
-public class Main extends HttpServlet {
+public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ServletContext application = this.getServletContext();
-		List<Mutter> mutterList = (List<Mutter>) application.getAttribute("mutterList");
+		List<TodoBeans> todoList = (List<TodoBeans>) application.getAttribute("todoList");
 
-		if (mutterList == null) {
-			mutterList = new ArrayList<>();
-			application.setAttribute("mutterList", mutterList);
+		if (todoList == null) {
+			todoList = new ArrayList<>();
+			application.setAttribute("todoList", todoList);
 		}
 
 		HttpSession session = request.getSession();
-		User loginUser = (User) session.getAttribute("loginUser");
+		UserBeans user = (UserBeans) session.getAttribute("user");
 
-		if (loginUser == null) {
-			response.sendRedirect("/Java_JSP/");
+		if (user == null) {
+			response.sendRedirect("/sampleSJ/");
 		} else {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/todo.jsp");
 			dispatcher.forward(request, response);
 		}
 	}
@@ -52,21 +53,21 @@ public class Main extends HttpServlet {
 		if(text != null && text.length() != 0) {
 
 			ServletContext application = this.getServletContext();
-			List<Mutter> mutterList = (List<Mutter>) application.getAttribute("mutterList");
+			List<TodoBeans> mutterList = (List<TodoBeans>) application.getAttribute("todoList");
 
 			HttpSession session = request.getSession();
-			User loginUser = (User) session.getAttribute("loginUser");
+			UserBeans loginUser = (UserBeans) session.getAttribute("user");
 
-			Mutter mutter = new Mutter(loginUser.getName(), text);
-			PostMutterLogic postMutterLogic = new PostMutterLogic();
-			postMutterLogic.execute(mutter, mutterList);
+			TodoBeans todo = new TodoBeans(loginUser.getName(), text);
+			RegisterLogic registerTodo = new RegisterLogic();
+			registerTodo.execute(todo, todo);
 
-			application.setAttribute("mutterList", mutterList);
+			application.setAttribute("todoList", todoList);
 		} else {
 			request.setAttribute("errorMsg","つぶやきが入力されていません");
 		}
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/todo.jsp");
 		dispatcher.forward(request, response);
 	}
 
