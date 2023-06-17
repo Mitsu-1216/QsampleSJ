@@ -8,9 +8,9 @@
 </head>
 <body>
 <h1>Wellcome!!</h1>
-<form action="/sampleSJ/Login" method="post">
+<form action="/sampleSJ/LoginServlet" method="post">
 ユーザ名：<input type="text" name="name">
-パスワード：<input type="password" name="pass"><br>
+パスワード：<input type="password" name="password"><br>
 <input type="submit" value="ログイン">
 </form>
 </body>

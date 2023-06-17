@@ -14,7 +14,7 @@ UserBeans login = (UserBeans) session.getAttribute("login");
 <h1>Login</h1>
 <% if(login != null) { %>
 <p>ログインに成功しました！</p>
-<p>ようこそ<%= loginr.getName() %>さん</p>
+<p>ようこそ<%= login.getName() %>さん</p>
 <a href="/sampleSJ/MainServlet">Todo一覧へ</a>
 <% } else { %>
 <p>ログインに失敗しました</p>
