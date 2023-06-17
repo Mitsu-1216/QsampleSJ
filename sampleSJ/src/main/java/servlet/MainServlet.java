@@ -13,13 +13,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.Mutter;
-import model.PostMutterLogic;
+import model.TodoBeans;
+import model.RegisterLogic;
 
-/**
- * Servlet implementation class Main
- */
-@WebServlet("/Main")
+
+@WebServlet("/MainServlet")
 public class Main extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
