@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,14 +50,6 @@ public class MainServlet extends HttpServlet {
 		String date = request.getParameter("date");
 		String text = request.getParameter("text");
         
-//        SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy/MM/dd");
-//        Date deadline = sdFormat.parse(date);
-        
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-
-
-		
-
 		if(text != null && text.length() != 0) {
 
 			ServletContext application = this.getServletContext();

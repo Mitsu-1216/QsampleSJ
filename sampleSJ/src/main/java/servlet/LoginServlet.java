@@ -25,9 +25,8 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String name=request.getParameter("name");
-		String password=request.getParameter("password");
 		
-		UserBeans user = new UserBeans(name,password);
+		UserBeans user = new UserBeans(name);
 		
 		LoginLogic loginLogic= new LoginLogic();
 		boolean isLogin = loginLogic.excute(user);
