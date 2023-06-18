@@ -18,6 +18,7 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 </style>
 </head>
 <body>
+<div class="container text-center">
 <h1>タスク一覧</h1>
 <p>
 <%= user.getName() %>さんのタスク
@@ -33,7 +34,7 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 <% if(todoList.size() == 0) { %>
 <p>タスクが登録されていません</p>
 <% } %>
-<table>
+<table class="table table-bordered my-5">
 <% for(TodoBeans todo : todoList) {%>
 <tr>
 <th>ユーザー名</th>
@@ -52,5 +53,6 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 <% } %>
 </tr>
 </table>
+</div>
 </body>
 </html</td>
