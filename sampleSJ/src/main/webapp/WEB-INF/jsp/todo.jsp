@@ -21,14 +21,35 @@ margin: 0 auto;
 .v-middle {
   vertical-align: middle;
   }
+  
+  h1 {
+  position: relative;
+  background: #dfefff;
+  box-shadow: 0px 0px 0px 5px #dfefff;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  color: #454545;
+  display:inline-block;
+}
+
+h1:after {
+  position: absolute;
+  content: '';
+  left: -7px;
+  top: -7px;
+  border-width: 0 0 15px 15px;
+  border-style: solid;
+  border-color: #fff #fff #a8d4ff;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
 </style>
 </head>
 <body>
 <div class="container text-center">
-<h1>タスク一覧</h1>
+<h1 class="my-5">タスク一覧</h1>
 <p>
-<%= user.getName() %>さんのタスク
-<a href="/sampleSJ/Logout">ログアウト</a>
+<%= user.getName() %>さん、こんにちは！
+<a href="/sampleSJ/Logout"class="btn btn-dark">ログアウト</a>
 </p>
 <form action="/sampleSJ/MainServlet" method="post">
 <input type="text" name="text" placeholder="タスクを入力してください">
@@ -37,7 +58,6 @@ margin: 0 auto;
 <% if(errorMsg != null) { %>
 <p><%= errorMsg %></p>
 <% } %>
-
 <table class="table table-bordered my-5 table-striped" border="1">
 <tr class="table-primary">
 <th style="width: 10%">ユーザー名</th>
