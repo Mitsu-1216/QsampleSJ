@@ -26,22 +26,21 @@ public class DeleteServlet extends HttpServlet {
 		String text = request.getParameter("text");
 		
 
-		if(text != null && text.length() != 0) {
-
 			ServletContext application = this.getServletContext();
 			List<TodoBeans> todoList = (List<TodoBeans>) application.getAttribute("todoList");
 
 			HttpSession session = request.getSession();
 			UserBeans loginUser = (UserBeans) session.getAttribute("user");
+			String name = loginUser.getName();
 
 			TodoBeans todo = new TodoBeans(loginUser.getName(), text);
 			RegisterLogic registerTodo = new RegisterLogic();
-			registerTodo.execute(todo, todoList);
+			
+			todoList.remove(todoList.indexOf(name));
+			todoList.remove(todoList.indexOf(text));
 
 			application.setAttribute("todoList", todoList);
-		} else {
-			request.setAttribute("errorMsg","タスクが入力されていません");
-		}
+
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/todo.jsp");
 		dispatcher.forward(request, response);
