@@ -14,7 +14,9 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <title>Todoアプリ</title>
 <style>
-
+table{
+width:80%;
+}
 </style>
 </head>
 <body>
@@ -34,11 +36,11 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 <% if(todoList.size() == 0) { %>
 <p>タスクが登録されていません</p>
 <% } %>
-<table class="table table-bordered my-5">
+<table class="table table-bordered my-5" border="1">
 <tr class="table-primary">
-<th class="col-xs-3 col-ms-6 col-md-2 col-lg-2">ユーザー名</th>
-<th class="col-xs-3 col-ms-6 col-md-2 col-lg-2">タスク内容</th>
-<th class="col-xs-3 col-ms-6 col-md-2 col-lg-2">削除</th>
+<th class="col-xs-3 col-ms-3 col-md-4 col-lg-4">ユーザー名</th>
+<th>タスク内容</th>
+<th>削除</th>
 </tr>
 <% for(TodoBeans todo : todoList) {%>
 <tr>
