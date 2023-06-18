@@ -42,6 +42,14 @@ h1:after {
   border-color: #fff #fff #a8d4ff;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 }
+
+.btn-fixed {
+	position:fixed;
+	top:50px;
+	right:50px;
+	display:inline-block;
+}
+
 </style>
 </head>
 <body>
@@ -49,7 +57,6 @@ h1:after {
 <h1 class="my-5">タスク一覧</h1>
 <p>
 <%= user.getName() %>さん、こんにちは！
-<a href="/sampleSJ/Logout"class="btn btn-dark">ログアウト</a>
 </p>
 <form action="/sampleSJ/MainServlet" method="post">
 <input type="text" name="text" placeholder="タスクを入力してください">
@@ -80,6 +87,9 @@ h1:after {
 <% if(todoList.size() == 0) { %>
 <p>タスクが登録されていません</p>
 <% } %>
+</div>
+<div class="btn-fixed">
+<a href="/sampleSJ/Logout" class="btn btn-dark">ログアウト</a>
 </div>
 </body>
 </html</td>
