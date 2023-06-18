@@ -34,7 +34,7 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 <p>タスクが登録されていません</p>
 <% } %>
 <% for(TodoBeans todo : todoList) {%>
-<form action="/sampleSJ/MainServlet" method="post">
+<form action="/sampleSJ/DeleteServlet" method="post">
 <input type="checkbox" name="check">
 <p></p>
 <p><%= todo.getUserName() %> : 
