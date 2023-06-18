@@ -21,5 +21,4 @@ public class TodoBeans implements Serializable {
 	public String getText() {
 		return text;
 	}
-
 }
