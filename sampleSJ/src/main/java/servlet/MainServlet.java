@@ -52,8 +52,11 @@ public class MainServlet extends HttpServlet {
 		String date = request.getParameter("date");
 		String text = request.getParameter("text");
         
-        SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy/MM/dd");
-        Date deadline = sdFormat.parse(date);
+//        SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy/MM/dd");
+//        Date deadline = sdFormat.parse(date);
+        
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date deadline = dateFormat.format(date);
 
 		
 
