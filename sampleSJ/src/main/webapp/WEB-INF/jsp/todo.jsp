@@ -48,7 +48,7 @@ width:80%;
 <td><%= todo.getUserName() %></td>
 <td><%= todo.getText() %></td>
 <td>
-<input type="hidden" name="text">
+<input type="hidden" name="text" value="<%= todo.getText() %>">
 <input type="submit" value="削除" class="btn btn-danger">
 </td>
 </form>

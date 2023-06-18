@@ -10,12 +10,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import model.RegisterLogic;
 import model.TodoBeans;
-import model.UserBeans;
-
 
 @WebServlet("/DeleteServlet")
 public class DeleteServlet extends HttpServlet {
@@ -29,15 +25,15 @@ public class DeleteServlet extends HttpServlet {
 			ServletContext application = this.getServletContext();
 			List<TodoBeans> todoList = (List<TodoBeans>) application.getAttribute("todoList");
 
-			HttpSession session = request.getSession();
-			UserBeans loginUser = (UserBeans) session.getAttribute("user");
-			String name = loginUser.getName();
-
-			TodoBeans todo = new TodoBeans(loginUser.getName(), text);
-			RegisterLogic registerTodo = new RegisterLogic();
+//			HttpSession session = request.getSession();
+//			UserBeans loginUser = (UserBeans) session.getAttribute("user");
+//			String name = loginUser.getName();	
 			
-			todoList.remove(todoList.indexOf(name));
-			todoList.remove(todoList.indexOf(text));
+				
+			todoList.remove(2);
+			
+			
+
 
 			application.setAttribute("todoList", todoList);
 
