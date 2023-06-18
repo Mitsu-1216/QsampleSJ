@@ -26,7 +26,7 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 </p>
 <form action="/sampleSJ/MainServlet" method="post">
 <input type="text" name="text" placeholder="タスクを入力してください">
-<input type="submit" value="登録">
+<input type="submit" value="登録" class="btn btn-primary">
 </form>
 <% if(errorMsg != null) { %>
 <p><%= errorMsg %></p>
@@ -36,9 +36,9 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 <% } %>
 <table class="table table-bordered my-5">
 <tr class="table-primary">
-<th>ユーザー名</th>
-<th>タスク内容</th>
-<th>削除ボタン</th>
+<th class="col-xs-3 col-ms-6 col-md-2 col-lg-2">ユーザー名</th>
+<th class="col-xs-3 col-ms-6 col-md-2 col-lg-2">タスク内容</th>
+<th class="col-xs-3 col-ms-6 col-md-2 col-lg-2">削除</th>
 </tr>
 <% for(TodoBeans todo : todoList) {%>
 <tr>
@@ -47,7 +47,7 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 <td><%= todo.getText() %></td>
 <td>
 <input type="hidden" name="text">
-<input type="submit" value="削除">
+<input type="submit" value="削除" class="btn btn-danger">
 </td>
 </form>
 <% } %>
