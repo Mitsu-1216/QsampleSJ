@@ -1,17 +1,16 @@
 package model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class TodoBeans implements Serializable {
 	private String userName;
 	private String text;
-	private Date deadline;
+	private String deadline;
 
 	public TodoBeans() {
 	}
 
-	public TodoBeans(String userName, String text,Date deadline) {
+	public TodoBeans(String userName, String text,String deadline) {
 		this.userName = userName;
 		this.text = text;
 		this.deadline = deadline;
@@ -25,7 +24,7 @@ public class TodoBeans implements Serializable {
 		return text;
 	}
 	
-	public Date getDeadline() {
+	public String getDeadline() {
 		return deadline;
 	}
 }

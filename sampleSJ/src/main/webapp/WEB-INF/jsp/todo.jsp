@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="model.UserBeans,model.TodoBeans,java.util.List" %>
+<%@ page import="model.UserBeans,model.TodoBeans,java.util.List,java.util.Date,java.text.SimpleDateFormat" %>
 <%@ page import ="model.UserBeans" %>
 <%
 UserBeans user = (UserBeans) session.getAttribute("user");
@@ -54,12 +54,14 @@ h1:after {
 </head>
 <body>
 <div class="container text-center">
-<h1 class="my-5">タスク一覧</h1>
-<p>
-<%= user.getName() %>さん、こんにちは！
-</p>
+<h1 class="my-5"><%= user.getName() %>さんのタスク一覧</h1>
+<%
+Date date = new Date();
+SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+String stringDate= format.format(date); 
+%>
 <form action="/sampleSJ/MainServlet" method="post">
-<input type="date" name="date">
+<input type="date" name="date" value="<%= stringDate %>">
 <input type="text" name="text" placeholder="タスクを入力してください">
 <input type="submit" value="登録" class="btn btn-primary">
 </form>

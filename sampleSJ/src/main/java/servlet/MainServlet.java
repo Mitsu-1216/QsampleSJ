@@ -3,7 +3,6 @@ package servlet;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -56,7 +55,7 @@ public class MainServlet extends HttpServlet {
 //        Date deadline = sdFormat.parse(date);
         
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date deadline = dateFormat.format(date);
+
 
 		
 
@@ -68,7 +67,7 @@ public class MainServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			UserBeans loginUser = (UserBeans) session.getAttribute("user");
 
-			TodoBeans todo = new TodoBeans(loginUser.getName(),text,deadline);
+			TodoBeans todo = new TodoBeans(loginUser.getName(),text,date);
 			RegisterLogic registerTodo = new RegisterLogic();
 			registerTodo.execute(todo, todoList);
 
