@@ -59,6 +59,7 @@ h1:after {
 <%= user.getName() %>さん、こんにちは！
 </p>
 <form action="/sampleSJ/MainServlet" method="post">
+<input type="date" name="date">
 <input type="text" name="text" placeholder="タスクを入力してください">
 <input type="submit" value="登録" class="btn btn-primary">
 </form>
@@ -67,13 +68,15 @@ h1:after {
 <% } %>
 <table class="table table-bordered my-5 table-striped" border="1">
 <tr class="table-primary">
-<th style="width: 10%">ユーザー名</th>
-<th style="width: 10%">タスク内容</th>
-<th style="width: 10%">削除</th>
+<th>期限</th>
+<th>ユーザー名</th>
+<th>タスク内容</th>
+<th>削除</th>
 </tr>
 <% for(TodoBeans todo : todoList) {%>
 <tr>
 <form action="/sampleSJ/DeleteServlet" method="post">
+<td class="v-middle"><%= todo.getDeadline() %></td>
 <td class="v-middle"><%= todo.getUserName() %></td>
 <td class="v-middle"><%= todo.getText() %></td>
 <td>

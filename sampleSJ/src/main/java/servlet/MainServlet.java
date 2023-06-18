@@ -1,7 +1,9 @@
 package servlet;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -47,7 +49,12 @@ public class MainServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
+		String date = request.getParameter("date");
 		String text = request.getParameter("text");
+        
+        SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Date deadline = sdFormat.parse(date);
+
 		
 
 		if(text != null && text.length() != 0) {
@@ -58,7 +65,7 @@ public class MainServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			UserBeans loginUser = (UserBeans) session.getAttribute("user");
 
-			TodoBeans todo = new TodoBeans(loginUser.getName(), text);
+			TodoBeans todo = new TodoBeans(loginUser.getName(),text,deadline);
 			RegisterLogic registerTodo = new RegisterLogic();
 			registerTodo.execute(todo, todoList);
 
