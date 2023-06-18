@@ -30,7 +30,7 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 <% if(errorMsg != null) { %>
 <p><%= errorMsg %></p>
 <% } %>
-<% if(todoList == null) { %>
+<% if(todoList.size() == 0) { %>
 <p>タスクが登録されていません</p>
 <% } %>
 <% for(TodoBeans todo : todoList) {%>
