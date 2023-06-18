@@ -54,7 +54,7 @@ h1:after {
 </head>
 <body>
 <div class="container text-center">
-<h1 class="my-5"><%= user.getName() %>さんのタスク一覧</h1>
+<h1 class="my-5"><%= session.getAttribute("name") %>さんのタスク一覧</h1>
 <%
 Date date = new Date();
 SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");

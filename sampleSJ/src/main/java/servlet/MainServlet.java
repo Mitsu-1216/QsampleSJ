@@ -31,11 +31,17 @@ public class MainServlet extends HttpServlet {
 			todoList = new ArrayList<>();
 			application.setAttribute("todoList", todoList);
 		}
+		
+		String name = request.getParameter("name");
+		
 
 		HttpSession session = request.getSession();
-		UserBeans user = (UserBeans) session.getAttribute("user");
+		session.setAttribute("name",name);
+		
+//		HttpSession session = request.getSession();
+//		UserBeans user = (UserBeans) session.getAttribute("user");
 
-		if (user == null) {
+		if (name == null) {
 			response.sendRedirect("/sampleSJ/");
 		} else {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/todo.jsp");
