@@ -69,7 +69,7 @@ String stringDate= format.format(date);
 <p><%= errorMsg %></p>
 <% } %>
 <table class="table table-bordered my-5 table-striped" border="1">
-<tr class="table-primary">
+<tr>
 <th>期限</th>
 <th>ユーザー名</th>
 <th>タスク内容</th>
