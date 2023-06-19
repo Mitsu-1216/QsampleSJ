@@ -70,14 +70,14 @@ String stringDate= format.format(date);
 </tr>
 <% for(TodoBeans todo : todoList) {%>
 <tr>
-<form action="/sampleSJ/DeleteServlet" method="post">
 <td class="v-middle"><%= todo.getDeadline() %></td>
 <td class="v-middle"><%= todo.getText() %></td>
 <td>
+<form action="/sampleSJ/DeleteServlet" method="post">
 <input type="hidden" name="text" value="<%= todo.getText() %>">
 <input type="submit" value="削除" class="btn btn-danger">
-</td>
 </form>
+</td>
 <% } %>
 </tr>
 </table>
