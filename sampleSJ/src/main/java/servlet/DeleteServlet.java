@@ -25,6 +25,7 @@ public class DeleteServlet extends HttpServlet {
 		ServletContext application = this.getServletContext();
 		List<TodoBeans> todoList = (List<TodoBeans>) application.getAttribute("todoList");
 
+		// アプリケーションスコープからタスクを削除
 		int listIndex = 0;
 		for (int i = 0; i < todoList.size(); i++) {
 			if (todoList.get(i).getText().equals(text))
@@ -32,7 +33,6 @@ public class DeleteServlet extends HttpServlet {
 		}
 
 		todoList.remove(listIndex);
-
 		application.setAttribute("todoList", todoList);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/todo.jsp");

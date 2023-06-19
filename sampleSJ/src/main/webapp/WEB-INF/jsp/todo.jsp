@@ -78,12 +78,12 @@ String stringDate= format.format(date);
 <input type="submit" value="削除" class="btn btn-danger">
 </form>
 </td>
-<% } %>
 </tr>
+<% } %>
 </table>
 <% if(todoList.size() == 0) { %>
 <p>タスクが登録されていません。</p>
 <% } %>
 </div>
 </body>
-</html</td>
+</html>
