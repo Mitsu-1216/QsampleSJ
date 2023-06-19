@@ -4,22 +4,17 @@ import java.io.Serializable;
 
 public class UserBeans implements Serializable {
 	private String name;
-	private String password;
 
 	public UserBeans() {
 	}
 
-	public UserBeans(String name, String password) {
+	public UserBeans(String name) {
 		this.name = name;
-		this.password = password;
 	}
 
 	public String getName() {
 		return name;
 	};
 
-	public String getPassword() {
-		return password;
-	}
 
 }
