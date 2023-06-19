@@ -15,7 +15,6 @@ import javax.servlet.http.HttpSession;
 
 import model.RegisterLogic;
 import model.TodoBeans;
-import model.UserBeans;
 
 
 @WebServlet("/MainServlet")
@@ -38,9 +37,6 @@ public class MainServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("name",name);
 		
-//		HttpSession session = request.getSession();
-//		UserBeans user = (UserBeans) session.getAttribute("user");
-
 		if (name == null) {
 			response.sendRedirect("/sampleSJ/");
 		} else {
@@ -62,9 +58,9 @@ public class MainServlet extends HttpServlet {
 			List<TodoBeans> todoList = (List<TodoBeans>) application.getAttribute("todoList");
 
 			HttpSession session = request.getSession();
-			UserBeans loginUser = (UserBeans) session.getAttribute("user");
+			String name =  (String) session.getAttribute("name");
 
-			TodoBeans todo = new TodoBeans(loginUser.getName(),text,date);
+			TodoBeans todo = new TodoBeans(name,text,date);
 			RegisterLogic registerTodo = new RegisterLogic();
 			registerTodo.execute(todo, todoList);
 

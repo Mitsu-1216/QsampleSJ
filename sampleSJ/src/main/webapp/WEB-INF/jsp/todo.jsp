@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="model.UserBeans,model.TodoBeans,java.util.List,java.util.Date,java.text.SimpleDateFormat" %>
-<%@ page import ="model.UserBeans" %>
+<%@ page import="model.TodoBeans,java.util.List,java.util.Date,java.text.SimpleDateFormat" %>
 <%
-UserBeans user = (UserBeans) session.getAttribute("user");
 List<TodoBeans> todoList = (List<TodoBeans>) application.getAttribute("todoList");
 String errorMsg = (String) request.getAttribute("errorMsg");
 %>
@@ -43,13 +41,9 @@ h1:after {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 }
 
-.btn-fixed {
-	position:fixed;
-	top:50px;
-	right:50px;
-	display:inline-block;
+.input-height {
+	height: 37px;
 }
-
 </style>
 </head>
 <body>
@@ -61,8 +55,8 @@ SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 String stringDate= format.format(date); 
 %>
 <form action="/sampleSJ/MainServlet" method="post">
-<input type="date" name="date" value="<%= stringDate %>">
-<input type="text" name="text" placeholder="タスクを入力してください">
+<input class="v-middle input-height" type="date" name="date" value="<%= stringDate %>">
+<input class="v-middle input-height" type="text" name="text" placeholder="タスクを入力してください">
 <input type="submit" value="登録" class="btn btn-primary">
 </form>
 <% if(errorMsg != null) { %>
@@ -71,7 +65,6 @@ String stringDate= format.format(date);
 <table class="table table-bordered my-5 table-striped" border="1">
 <tr>
 <th>期限</th>
-<th>ユーザー名</th>
 <th>タスク内容</th>
 <th>削除</th>
 </tr>
@@ -79,7 +72,6 @@ String stringDate= format.format(date);
 <tr>
 <form action="/sampleSJ/DeleteServlet" method="post">
 <td class="v-middle"><%= todo.getDeadline() %></td>
-<td class="v-middle"><%= todo.getUserName() %></td>
 <td class="v-middle"><%= todo.getText() %></td>
 <td>
 <input type="hidden" name="text" value="<%= todo.getText() %>">
@@ -90,11 +82,8 @@ String stringDate= format.format(date);
 </tr>
 </table>
 <% if(todoList.size() == 0) { %>
-<p>タスクが登録されていません</p>
+<p>タスクが登録されていません。</p>
 <% } %>
-</div>
-<div class="btn-fixed">
-<a href="/sampleSJ/Logout" class="btn btn-dark">ログアウト</a>
 </div>
 </body>
 </html</td>
